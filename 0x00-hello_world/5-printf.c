@@ -1,9 +1,9 @@
-#include <stdio.h>
-/** 
- *main
+#include<stdio.h>
+/**
+ *main - Uses printf to print a string
  *
- *printf program
- *Return: (0) after executing the program
+ *Description: To use printf
+ *Return: (0)
  */
 int main(void)
 {
