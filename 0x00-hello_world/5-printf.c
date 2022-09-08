@@ -1,9 +1,8 @@
 #include <stdio.h>
-/**
- * 
+/** 
  *main
  *printf program
- *Return: 1 after executing the program
+ *Return: 0 after executing the program
  */
 int main(void)
 {
