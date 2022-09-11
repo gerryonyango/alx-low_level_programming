@@ -4,6 +4,7 @@
 /* more headers goes there */
 /* betty style doc for function main goes there */
 int main(void)
+/* assign a random number to the variable n each time it is executed */
 {
 int n;
 
