@@ -1,60 +1,46 @@
 #include "main.h"
 
 /**
- * print_number - prints a number using _putchar
- * @n: number to print
+ * print_times_table - Prints the n times table
  *
- * Return: void
- */
-void print_number(int n)
-{
-	unsigned int un = 0;
-
-	if (n < 0)
-	{
-		if (n < 1000000000)
-			n = -n;
-		un = n;
-		_putchar(45);
-		num_to_char(n);
-	}
-	else
-	{
-		un = n;
-		num_to_char(un);
-	}
-}
-
-/**
- * num_to_char - transforms a number with 1 or more digits into a char
- * @n: number to print
+ * @n: number times table (0 < n <= 15)
  *
- * Return: void
+ * Return: no return
  */
-void num_to_char(unsigned int n)
+void print_times_table(int n)
 {
-	unsigned int d = 10;
+	int a, b, op;
 
-	if (n < d)
+	if (n >= 0 && n <= 15)
 	{
-		_putchar('0' + n);
-	}
-	else
-	{
-		while (n >= d)
+		for (a = 0; a <= n; a++)
 		{
-			d *= 10;
-			if (d == 1000000000)
-				break;
+			_putchar(48);
+			for (b = 1; b <= n; b++)
+			{
+				op = a * b;
+				_putchar(44);
+				_putchar(32);
+				if (op <= 9)
+				{
+					_putchar(32);
+					_putchar(32);
+					_putchar(op + 48);
+				}
+				else if (op <= 99)
+				{
+					_putchar(32);
+					_putchar((op / 10) + 48);
+					_putchar((op % 10) + 48);
+				}
+				else
+				{
+					_putchar(((op / 100) % 10) + 48);
+					_putchar(((op / 10) % 10) + 48);
+					_putchar((op % 10) + 48);
+				}
+			}
+			_putchar('\n');
 		}
-		if (!(d == 1000000000) || n == 123456789)
-			d /= 10;
-		_putchar('0' + n / d);
-		while (d != 10)
-		{
-			d /= 10;
-			_putchar('0' + (n / d) % 10);
-		}
-		_putchar('0' + n % 10);
 	}
 }
